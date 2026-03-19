@@ -4,17 +4,17 @@ public class Livro {
 	private String titulo;
 	private String autor;
 	private String isbn;
-	private String DataPublicacao;
-	private String Editora;
-	private boolean Disponibilidade;
+	private String dataPublicacao;
+	private String editora;
+	private boolean disponibilidade;
 	
-	public Livro(String titulo, String autor, String isbn, String DataPublicacao, String Editora) {
+	public Livro(String titulo, String autor, String isbn, String dataPublicacao, String editora) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.isbn = isbn;
-		this.DataPublicacao = DataPublicacao;
-		this.Editora = Editora;
-		this.Disponibilidade = true; //Por padrão, o livro está disponível
+		this.dataPublicacao = dataPublicacao;
+		this.editora = editora;
+		this.disponibilidade = true; //Por padrão, o livro está disponível
 	}
 
 	public String getTitulo() {
@@ -42,31 +42,31 @@ public class Livro {
 	}
 
 	public String getDataPublicacao() {
-		return DataPublicacao;
+		return dataPublicacao;
 	}
 
 	public void setDataPublicacao(String dataPublicacao) {
-		DataPublicacao = dataPublicacao;
+		this.dataPublicacao = dataPublicacao;
 	}
 
 	public String getEditora() {
-		return Editora;
+		return editora;
 	}
 
 	public void setEditora(String editora) {
-		Editora = editora;
+		this.editora = editora;
 	}
 
 	public boolean isDisponibilidade() {
-		return Disponibilidade;
+		return disponibilidade;
 	}
 
 	public void setDisponibilidade(boolean disponibilidade) {
-		Disponibilidade = disponibilidade;
+		this.disponibilidade = disponibilidade;
 	}
 	
 	public String toString() {
-		return "Livro [titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", DataPublicacao="
-				+ DataPublicacao + ", Editora=" + Editora + ", Disponibilidade=" + Disponibilidade + "]";
+		return "Livro [titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", dataPublicacao="
+				+ dataPublicacao + ", editora=" + editora + ", disponibilidade=" + disponibilidade + "]";
 	}
 }

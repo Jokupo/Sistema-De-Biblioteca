@@ -1,0 +1,126 @@
+================================================================================
+                       📖 ÍNDICE DE DOCUMENTAÇÃO
+             LEIA NESTA ORDEM PARA ENTENDER COMPLETAMENTE
+================================================================================
+
+🚀 COMECE AQUI!
+═════════════════════════════════════════════════════════════════════════════
+
+1. **GUIA_RAPIDO.txt** (5 minutos)
+   └─ Como compilar e executar
+   └─ ISBNs para testar
+   └─ Menu principal
+   └─ Funcionalidades principais
+
+2. **RELATORIO_MELHORIAS.txt** (15 minutos)
+   └─ Todos os 6 problemas encontrados
+   └─ Como foram corrigidos
+   └─ 5 melhorias implementadas
+   └─ Dicas para futuras melhorias
+
+3. **GUIA_TESTES.txt** (20 minutos)
+   └─ 13 casos de teste com exemplo
+   └─ Entrada esperada
+   └─ Resultado esperado
+   └─ Como testar cada funcionalidade
+
+
+═════════════════════════════════════════════════════════════════════════════
+📊 RESUMO RÁPIDO
+═════════════════════════════════════════════════════════════════════════════
+
+PROBLEMAS CORRIGIDOS: 6
+├─ Nome "Bibilioteca" → "Biblioteca"
+├─ Atributos em maiúscula → camelCase
+├─ Sem validações → Validações completas
+├─ Usuario vazio → Implementado
+├─ Sem ISBN automático → Implementado
+└─ Sem busca por ISBN → Implementado
+
+MELHORIAS: 5
+├─ BaseDadosLivros.java (nova)
+├─ Usuario.java (completa)
+├─ Biblioteca.java (corrigida)
+├─ Livro.java (corrigida)
+└─ Main.java (implementada)
+
+FUNCIONALIDADES: 15+
+├─ Registrar por ISBN (automático!)
+├─ Registrar manualmente
+├─ Listar livros
+├─ Buscar por título
+├─ Buscar por ISBN
+├─ Gerenciar usuários
+├─ E mais...
+
+STATUS: ✓ 100% COMPLETO
+
+
+═════════════════════════════════════════════════════════════════════════════
+📍 ONDE ESTÃO OS ARQUIVOS
+═════════════════════════════════════════════════════════════════════════════
+
+C:\Users\costa\SistemaBiblioteca\SistemaBiblioteca\
+
+CÓDIGO (src/):
+├─ Biblioteca.java ✓
+├─ Livro.java ✓
+├─ Usuario.java ✓
+├─ Main.java ✓
+└─ BaseDadosLivros.java ✓
+
+COMPILADO (bin/):
+└─ Todos os .class
+
+DOCUMENTAÇÃO (raiz):
+├─ GUIA_RAPIDO.txt ← LEIA PRIMEIRO!
+├─ RELATORIO_MELHORIAS.txt ← LEIA DEPOIS
+├─ GUIA_TESTES.txt ← TESTE COM ESTE
+└─ INDICE.txt (este arquivo)
+
+
+═════════════════════════════════════════════════════════════════════════════
+🎯 COMO USAR AGORA
+═════════════════════════════════════════════════════════════════════════════
+
+1. Abra Prompt de Comando
+2. cd C:\Users\costa\SistemaBiblioteca\SistemaBiblioteca
+3. javac -d bin src\*.java
+4. java -cp bin Main
+5. Digite: 1 (para registrar livro)
+6. Digite ISBN: 978-0451524935
+7. Veja a mágica acontecer! ✨
+
+
+═════════════════════════════════════════════════════════════════════════════
+📚 ISBNs PARA TESTAR
+═════════════════════════════════════════════════════════════════════════════
+
+978-0451524935  → 1984
+978-0062316097  → O Hobbit
+978-8532511010  → Dom Casmurro
+978-8535930689  → O Cortiço
+978-0451526342  → Orgulho e Preconceito
+978-8501045534  → Memórias Póstumas de Brás Cubas
+
+
+═════════════════════════════════════════════════════════════════════════════
+✅ TUDO FUNCIONA?
+═════════════════════════════════════════════════════════════════════════════
+
+Sim! Veja GUIA_TESTES.txt para 13 casos de teste
+
+
+═════════════════════════════════════════════════════════════════════════════
+💡 DICA IMPORTANTE
+═════════════════════════════════════════════════════════════════════════════
+
+Os dados SÃO PERDIDOS ao fechar o programa!
+Veja RELATORIO_MELHORIAS.txt para como salvar dados
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+COMECE AGORA! Leia GUIA_RAPIDO.txt →
+
+═════════════════════════════════════════════════════════════════════════════

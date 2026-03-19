@@ -1,0 +1,351 @@
+================================================================================
+                         GUIA DE TESTES - PASSO A PASSO
+           PARA TESTAR TODAS AS FUNCIONALIDADES DO SISTEMA
+================================================================================
+
+PASSO 1: COMPILAR O PROJETO
+═════════════════════════════════════════════════════════════════════════════
+
+Abra o Prompt de Comando e execute:
+
+cd C:\Users\costa\SistemaBiblioteca\SistemaBiblioteca
+javac -d bin src\*.java
+
+Se não aparecer erro, o código compilou com sucesso! ✓
+
+
+PASSO 2: EXECUTAR O SISTEMA
+═════════════════════════════════════════════════════════════════════════════
+
+Ainda no Prompt, execute:
+
+java -cp bin Main
+
+Você verá a tela de menu principal.
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 1: Registrar livro por ISBN (O HOBBIT)
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Menu Principal aparece:
+    1. Registrar novo livro por ISBN
+    ...
+Escolha: 1
+
+Digite o ISBN: 978-0062316097
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+✓ Livro encontrado na base de dados:
+  Título: O Hobbit
+  Autor: J.R.R. Tolkien
+  Data de Publicação: 1937
+  Editora: Intrínseca
+
+✓ Livro adicionado: O Hobbit por J.R.R. Tolkien
+
+O livro é adicionado AUTOMATICAMENTE!
+Todas as informações preenchidas!
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 2: Registrar outro livro (1984)
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 1
+
+Digite o ISBN: 978-0451524935
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+✓ Livro encontrado na base de dados:
+  Título: 1984
+  Autor: George Orwell
+  Data de Publicação: 1949
+  Editora: Companhia das Letras
+
+✓ Livro adicionado: 1984 por George Orwell
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 3: Listar todos os livros cadastrados
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 3
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+=== LIVROS CADASTRADOS ===
+Total de livros: 2
+────────────────────────────────────────────────────────────────────────────
+1. O Hobbit                    | Autor: J.R.R. Tolkien         | ISBN: 978-0062316097
+2. 1984                        | Autor: George Orwell          | ISBN: 978-0451524935
+────────────────────────────────────────────────────────────────────────────
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 4: Buscar livro por título
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 4
+
+Digite o título do livro: O Hobbit
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+Livro encontrado: O Hobbit por J.R.R. Tolkien
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 5: Buscar livro por ISBN
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 5
+
+Digite o ISBN do livro: 978-0451524935
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+✓ Livro encontrado:
+Livro [titulo=1984, autor=George Orwell, isbn=978-0451524935, dataPublicacao=
+1949, editora=Companhia das Letras, disponibilidade=true]
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 6: Registrar livro manualmente
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 2
+
+Digite o título do livro: O Alienista
+
+Digite o autor do livro: Machado de Assis
+
+Digite o ISBN do livro: 978-8532511027
+
+Digite a data de publicação (AAAA): 1882
+
+Digite a editora: Companhia das Letras
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+✓ Livro adicionado: O Alienista por Machado de Assis
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 7: Registrar novo usuário
+═════════────────────────────────────────────────────────────────────────────
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 6
+
+Submenu:
+    1. Registrar novo usuário
+    2. Listar usuários
+    0. Voltar ao menu principal
+
+Escolha: 1
+
+Digite o nome do usuário: João Silva
+
+Digite o email do usuário: joao@email.com
+
+Digite o telefone do usuário: (11) 98765-4321
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+✓ Usuário adicionado: João Silva (joao@email.com)
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 8: Listar usuários cadastrados
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 6
+
+Submenu - Escolha: 2
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+=== USUÁRIOS CADASTRADOS ===
+1. Usuario [nome=João Silva, email=joao@email.com, telefone=(11) 98765-4321, 
+livrosEmprestados=0]
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 9: Listar ISBNs disponíveis
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 7
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+=== ISBNs DISPONÍVEIS NO SISTEMA ===
+1. ISBN: 978-0451524935
+   1984 - George Orwell (1949)
+2. ISBN: 978-0062316097
+   O Hobbit - J.R.R. Tolkien (1937)
+3. ISBN: 978-8532511010
+   Dom Casmurro - Machado de Assis (1899)
+4. ISBN: 978-8535930689
+   O Cortiço - Aluísio Azevedo (1890)
+5. ISBN: 978-0451526342
+   Orgulho e Preconceito - Jane Austen (1813)
+6. ISBN: 978-8501045534
+   Memórias Póstumas de Brás Cubas - Machado de Assis (1881)
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 10: Tentar adicionar ISBN que não existe
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 1
+
+Digite o ISBN: 999-9999999999
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+❌ ISBN não encontrado na base de dados!
+Livros disponíveis:
+
+=== ISBNs DISPONÍVEIS NO SISTEMA ===
+(lista de 6 livros aparece)
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 11: Tentar adicionar livro duplicado
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 1
+
+Digite o ISBN: 978-0451524935 (já foi adicionado antes)
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+❌ Este livro já foi registrado na biblioteca!
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 12: Registrar livro com dados vazios
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 2
+
+Digite o título do livro: (apenas apertar Enter - vazio!)
+
+Digite o autor do livro: Autor Teste
+
+Digite o ISBN do livro: 978-0000000000
+
+Digite a data de publicação (AAAA): 2020
+
+Digite a editora: Editora Teste
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+❌ Título, autor e ISBN são obrigatórios!
+
+
+═════════════════════════════════════════════════════════════════════════════
+TEST CASE 13: Sair do sistema
+═════════════════════════════════════════════════════════════════════════════
+
+ENTRADA DO USUÁRIO:
+──────────────────
+
+Escolha: 0
+
+
+RESULTADO ESPERADO:
+───────────────────
+
+✓ Encerrando o sistema. Até logo!
+
+O programa fecha.
+
+
+═════════════════════════════════════════════════════════════════════════════
+RESUMO DOS TESTES
+═════════════════════════════════════════════════════════════════════════════
+
+✓ Test Case 1  - Registrar por ISBN válido
+✓ Test Case 2  - Registrar outro livro
+✓ Test Case 3  - Listar todos os livros
+✓ Test Case 4  - Buscar por título
+✓ Test Case 5  - Buscar por ISBN
+✓ Test Case 6  - Registrar manual
+✓ Test Case 7  - Registrar usuário
+✓ Test Case 8  - Listar usuários
+✓ Test Case 9  - Listar ISBNs
+✓ Test Case 10 - ISBN inválido
+✓ Test Case 11 - Livro duplicado
+✓ Test Case 12 - Dados vazios
+✓ Test Case 13 - Sair
+
+Se todos os testes passarem, o sistema está 100% funcional!
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+FIM DO GUIA DE TESTES
+

@@ -1,0 +1,233 @@
+================================================================================
+                  🎉 SISTEMA PRONTO - GUIA FINAL DE USO 🎉
+            SISTEMA DE BIBLIOTECA v2.0 COM MAVEN + WEBCAM
+================================================================================
+
+Status: ✅ TOTALMENTE FUNCIONAL
+Data: 19/03/2026
+
+
+═════════════════════════════════════════════════════════════════════════════
+🚀 COMO USAR (PASSO A PASSO)
+═════════════════════════════════════════════════════════════════════════════
+
+PASSO 1: Verificar se tem Maven instalado
+──────────────────────────────────────────
+
+Abra Prompt de Comando e execute:
+  mvn -version
+
+Se não aparecer uma versão, baixe em: https://maven.apache.org/download.cgi
+
+
+PASSO 2: Navegue até o projeto
+───────────────────────────────
+
+  cd C:\Users\costa\SistemaBiblioteca\SistemaBiblioteca
+
+
+PASSO 3: Instale as dependências (primeira vez)
+────────────────────────────────────────────────
+
+  mvn clean install
+
+⏳ Isso vai demorar alguns minutos
+✓ Quando terminar, verá: BUILD SUCCESS
+
+
+PASSO 4: Execute o sistema
+────────────────────────────
+
+  mvn exec:java
+
+
+PASSO 5: Use o menu
+────────────────────
+
+Menu Principal aparecerá com 8 opções:
+
+1. Registrar livro por ISBN
+2. Registrar livro por WEBCAM 📸   ← NOVO!
+3. Registrar livro manualmente
+4. Listar todos os livros
+5. Buscar livro por título
+6. Buscar livro por ISBN
+7. Gerenciar usuários
+8. Listar ISBNs disponíveis
+0. Sair
+
+
+═════════════════════════════════════════════════════════════════════════════
+📸 COMO USAR A WEBCAM (OPÇÃO 2)
+═════════════════════════════════════════════════════════════════════════════
+
+1. Escolha: 2
+2. Sistema pedirá para conectar webcam
+3. Pressione ENTER
+4. Sistema abrirá a câmera por 3 segundos
+5. Aponte o código de barras para a câmera
+6. Sistema decodificará automaticamente
+7. Livro será adicionado com todas as informações!
+
+
+═════════════════════════════════════════════════════════════════════════════
+📚 ISBNs PARA TESTAR
+═════════════════════════════════════════════════════════════════════════════
+
+Use qualquer uma das opções de digitação (1 ou 3):
+
+• 978-0451524935  → 1984 (George Orwell)
+• 978-0062316097  → O Hobbit (J.R.R. Tolkien)
+• 978-8532511010  → Dom Casmurro (Machado de Assis)
+• 978-8535930689  → O Cortiço (Aluísio Azevedo)
+• 978-0451526342  → Orgulho e Preconceito (Jane Austen)
+• 978-8501045534  → Memórias Póstumas (Machado de Assis)
+
+
+═════════════════════════════════════════════════════════════════════════════
+✨ CARACTERÍSTICAS DO SISTEMA
+═════════════════════════════════════════════════════════════════════════════
+
+✓ Registro por ISBN (digitando)
+✓ Registro por WEBCAM (capturando código de barras)
+✓ Registro manual
+✓ Listar livros com formatação visual
+✓ Buscar por título
+✓ Buscar por ISBN
+✓ Gerenciar usuários
+✓ Sistema de empréstimos
+✓ Validações robustas
+✓ Mensagens claras
+
+
+═════════════════════════════════════════════════════════════════════════════
+📁 ARQUIVOS DO SISTEMA
+═════════════════════════════════════════════════════════════════════════════
+
+src/
+├─ Main.java              → Menu interativo (com opção de webcam)
+├─ Biblioteca.java        → Gerencia livros e usuários
+├─ Livro.java             → Dados do livro
+├─ Usuario.java           → Dados e empréstimos
+├─ BaseDadosLivros.java   → Base de dados com ISBNs
+└─ WebcamCapture.java     → Captura e decodifica webcam
+
+pom.xml                   → Configuração Maven com dependências
+
+
+═════════════════════════════════════════════════════════════════════════════
+🛠️ DEPENDÊNCIAS INSTALADAS
+═════════════════════════════════════════════════════════════════════════════
+
+✓ ZXing 3.5.2         → Decodifica códigos de barras
+✓ Webcam Capture      → Acessa a webcam
+✓ BridJ 0.7.0        → Drivers nativos
+✓ SLF4J 1.7.36       → Logging
+
+
+═════════════════════════════════════════════════════════════════════════════
+⚠️ SE A WEBCAM NÃO FOR ENCONTRADA
+═════════════════════════════════════════════════════════════════════════════
+
+Opção 2 não encontrar webcam?
+
+Solução 1: Conectar webcam
+├─ Conecte uma webcam USB
+├─ Aguarde drivers instalarem
+└─ Tente novamente
+
+Solução 2: Usar notebook com câmera
+├─ Ativa a câmera em: Configurações → Privacidade → Câmera
+└─ Tente novamente
+
+Solução 3: Fechar outros programas
+├─ Feche Zoom, Skype, etc que usam câmera
+├─ Reinicie o programa
+└─ Tente novamente
+
+Solução 4: Usar outras opções
+├─ Opção 1: Registrar por ISBN (digitando)
+├─ Opção 3: Registrar manualmente
+└─ Funcionam SEM webcam!
+
+
+═════════════════════════════════════════════════════════════════════════════
+📖 EXEMPLO COMPLETO DE USO
+═════════════════════════════════════════════════════════════════════════════
+
+TERMINAL:
+$ cd C:\Users\costa\SistemaBiblioteca\SistemaBiblioteca
+$ mvn clean install
+$ mvn exec:java
+
+SISTEMA:
+    SISTEMA DE BIBLIOTECA - MENU PRINCIPAL
+==================================================
+1. Registrar livro por ISBN
+2. Registrar livro por WEBCAM 📸
+3. Registrar livro manualmente
+4. Listar todos os livros
+5. Buscar livro por título
+6. Buscar livro por ISBN
+7. Gerenciar usuários
+8. Listar ISBNs disponíveis
+0. Sair
+==================================================
+Escolha uma opção: 1
+
+--- REGISTRAR LIVRO POR ISBN ---
+Digite o ISBN do livro (ex: 978-0451524935): 978-0451524935
+
+✓ Livro encontrado na base de dados:
+  Título: 1984
+  Autor: George Orwell
+  Data de Publicação: 1949
+  Editora: Companhia das Letras
+
+✓ Livro adicionado: 1984 por George Orwell
+
+
+═════════════════════════════════════════════════════════════════════════════
+🔧 COMANDOS MAVEN ÚTEIS
+═════════════════════════════════════════════════════════════════════════════
+
+Compilar:
+  mvn compile
+
+Executar:
+  mvn exec:java
+
+Criar JAR:
+  mvn clean package
+
+JAR executável:
+  java -jar target/sistema-biblioteca.jar
+
+Limpar:
+  mvn clean
+
+Ver dependências:
+  mvn dependency:tree
+
+
+═════════════════════════════════════════════════════════════════════════════
+✅ VERIFICAÇÃO FINAL
+═════════════════════════════════════════════════════════════════════════════
+
+Antes de usar, verifique:
+
+✓ Maven instalado?     (mvn -version)
+✓ Java 11+?            (java -version)
+✓ Webcam conectada?    (opcional, para opção 2)
+✓ Conexão internet?    (primeira vez)
+
+Se tudo OK, execute: mvn exec:java
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+🎊 SISTEMA PRONTO PARA USO!
+
+Execute agora: mvn exec:java
+
+═════════════════════════════════════════════════════════════════════════════

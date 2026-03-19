@@ -1,0 +1,93 @@
+================================================================================
+                         GUIA RÁPIDO DE REFERÊNCIA
+                      SISTEMA DE BIBLIOTECA - 1 PÁGINA
+================================================================================
+
+🚀 COMEÇAR AGORA
+═════════════════════════════════════════════════════════════════════════════
+
+1. Abra Prompt de Comando
+2. Digite: cd C:\Users\costa\SistemaBiblioteca\SistemaBiblioteca
+3. Digite: javac -d bin src\*.java
+4. Digite: java -cp bin Main
+5. Escolha opção 1 e digite ISBN: 978-0451524935
+
+
+📚 ISBNs PARA TESTAR
+═════════════════════════════════════════════════════════════════════════════
+
+978-0451524935  → 1984 (George Orwell)
+978-0062316097  → O Hobbit (J.R.R. Tolkien)
+978-8532511010  → Dom Casmurro (Machado de Assis)
+978-8535930689  → O Cortiço (Aluísio Azevedo)
+978-0451526342  → Orgulho e Preconceito (Jane Austen)
+978-8501045534  → Memórias Póstumas (Machado de Assis)
+
+
+📋 MENU PRINCIPAL
+═════════════════════════════════════════════════════════════════════════════
+
+1. Registrar livro por ISBN (automático!)
+2. Registrar livro manualmente
+3. Listar todos os livros
+4. Buscar livro por título
+5. Buscar livro por ISBN
+6. Gerenciar usuários
+7. Listar ISBNs disponíveis
+0. Sair
+
+
+🔧 ARQUIVOS DO PROJETO
+═════════════════════════════════════════════════════════════════════════════
+
+src/Biblioteca.java      → Gerencia livros e usuários
+src/Livro.java           → Dados do livro
+src/Usuario.java         → Dados do usuário + empréstimos
+src/Main.java            → Interface e menu
+src/BaseDadosLivros.java → Base de dados com ISBNs
+
+
+🎯 PRINCIPAIS FUNCIONALIDADES
+═════════════════════════════════════════════════════════════════════════════
+
+✓ Registrar livro por ISBN (automático)
+  • Digita ISBN
+  • Sistema busca automaticamente
+  • Preenche título, autor, data, editora
+  • Adiciona sem erros!
+
+✓ Registrar livro manualmente
+  • Digita todos os dados
+  • Sistema valida
+
+✓ Buscar livros
+  • Por ISBN
+  • Por título
+
+✓ Listar livros
+  • Todos os livros cadastrados
+  • Com ISBN
+
+✓ Gerenciar usuários
+  • Registrar novo usuário
+  • Listar usuários
+
+
+📊 PROBLEMAS CORRIGIDOS
+═════════════════════════════════════════════════════════════════════════════
+
+✓ Nome "Bibilioteca" → "Biblioteca"
+✓ Atributos em maiúscula → camelCase
+✓ Sem validações → Validações completas
+✓ Usuario vazio → Classe completa
+✓ Sem ISBN automático → Sistema implementado
+
+
+💡 DICA: Os dados são perdidos ao fechar o programa!
+Para salvar dados, veja RELATORIO_MELHORIAS.txt
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+FIM DO GUIA RÁPIDO
+
