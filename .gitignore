@@ -1,2 +1,16 @@
 /bin/
 /target/
+/GUIA_FINAL_USO.txt
+/GUIA_RAPIDO.txt
+/GUIA_TESTES.txt
+/INDICE.txt
+/LEIA_PRIMEIRO.txt
+/RELATORIO_MELHORIAS.txt
+/SISTEMA_PRONTO.txt
+/src/
+/pom.xml
+/.settings/
+/.project
+/.classpath
+/*iml
+.DS_Store
