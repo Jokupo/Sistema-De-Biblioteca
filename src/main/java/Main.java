@@ -1,12 +1,18 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+
+
 
 public class Main {
 	private static Biblioteca biblioteca;
 	private static Scanner scanner;
+	private static WebcamCapture capture; 
 	
 	public static void main(String[] args) {
 		biblioteca = new Biblioteca();
 		scanner = new Scanner(System.in);
+		capture = new WebcamCapture();
 		
 		exibirMenuPrincipal();
 		
@@ -117,12 +123,11 @@ public class Main {
 	private static void registrarLivroComWebcam() {
 		System.out.println("\n--- REGISTRAR LIVRO COM WEBCAM 📸 ---");
 		System.out.println("Certifique-se de que sua webcam está conectada!");
-		System.out.println("Você tem 3 segundos para apontar o código de barras para a câmera...\n");
+		System.out.println("aponte o código de barras para a câmera...\n");
 		System.out.print("Pressione ENTER para começar: ");
 		scanner.nextLine();
 		
 		// Criar instância de captura
-		WebcamCapture capture = new WebcamCapture();
 		
 		if (!capture.isWebcamAvailable()) {
 			System.out.println("❌ Webcam não encontrada!");
@@ -147,41 +152,26 @@ public class Main {
 		// Limpar ISBN
 		isbn = isbn.trim();
 		
-		// Verificar se já existe
-		if (biblioteca.buscarPorIsbn(isbn) != null) {
-			System.out.println("❌ Este livro já foi registrado na biblioteca!");
-			return;
-		}
-		
-		// Buscar na base de dados
-		BaseDadosLivros.LivroInfo livroInfo = BaseDadosLivros.buscarPorIsbn(isbn);
-		
-		if (livroInfo == null) {
-			System.out.println("❌ ISBN não encontrado na base de dados!");
-			System.out.println("Livros disponíveis:");
-			BaseDadosLivros.listarTodosIsbn();
-			return;
-		}
-		
-		// Exibir informações
-		System.out.println("\n✓ Livro encontrado na base de dados:");
-		System.out.println("  Título: " + livroInfo.titulo);
-		System.out.println("  Autor: " + livroInfo.autor);
-		System.out.println("  Data de Publicação: " + livroInfo.dataPublicacao);
-		System.out.println("  Editora: " + livroInfo.editora);
-		
-		// Criar e adicionar livro
-		Livro novoLivro = new Livro(
-			livroInfo.titulo,
-			livroInfo.autor,
-			isbn,
-			livroInfo.dataPublicacao,
-			livroInfo.editora
-		);
-		
-		biblioteca.adicionarLivro(novoLivro);
+		APIBuscadorDelivro.LivroTemp livroConfirmado = APIBuscadorDelivro.buscarEConfirmarLivro(isbn);
+
+		// 3. Se o usuário confirmou na janela Swing
+		if (livroConfirmado != null) {
+		    
+		    // Transforma o "Candidato" no seu objeto "Livro" real do sistema
+		    Livro novoLivro = new Livro(
+		        livroConfirmado.titulo,
+		        livroConfirmado.autor,
+		        livroConfirmado.isbn,
+		        livroConfirmado.ano,
+		        livroConfirmado.editora
+		    );
+		    
+		    // Salva na sua biblioteca (colection ou banco)
+		    biblioteca.adicionarLivro(novoLivro);
+		    
+		    JOptionPane.showMessageDialog(null, "✓ Livro '" + novoLivro.getTitulo() + "' cadastrado com sucesso!");
 	}
-	
+}
 	private static void registrarLivroManual() {
 		System.out.println("\n--- REGISTRAR LIVRO MANUALMENTE ---");
 		

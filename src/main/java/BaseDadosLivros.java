@@ -53,6 +53,12 @@ public class BaseDadosLivros {
 			"1881",
 			"Companhia das Letras"
 		));
+		baseDados.put("978-08551006825", new LivroInfo(
+				"1984",
+				"Teste",
+				"Café",
+				"Companhia das Letras"
+			));
 	}
 	
 	/**
