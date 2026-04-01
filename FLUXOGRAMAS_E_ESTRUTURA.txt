@@ -1,0 +1,266 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    DIAGRAMA DO NOVO FLUXO DO SISTEMA
+═══════════════════════════════════════════════════════════════════════════════
+
+                              INÍCIO
+                                │
+                                ▼
+                    ┌─────────────────────────┐
+                    │ INICIALIZAR SISTEMA     │
+                    │ • Biblioteca            │
+                    │ • Scanner               │
+                    │ • WebcamCapture         │
+                    └─────────────────────────┘
+                                │
+                                ▼
+                    ┌─────────────────────────────────────┐
+                    │   MENU PRINCIPAL (4 ÁREAS)          │
+                    ├─────────────────────────────────────┤
+                    │ 1. 📚 REGISTRAR LIVROS              │
+                    │ 2. 👥 GERENCIAR USUÁRIOS            │
+                    │ 3. 🔄 EMPRESTAR/DEVOLVER LIVROS     │
+                    │ 4. 🔍 CONSULTAS                     │
+                    │ 0. ❌ SAIR                          │
+                    └─────────────────────────────────────┘
+                      │       │        │         │      │
+         ┌────────────┘       │        │         │      └─────────────┐
+         │                    │        │         │                    │
+         ▼                    ▼        ▼         ▼                    ▼
+    ┌─────────────┐    ┌──────────┐ ┌────────┐ ┌────────┐      ┌─────────┐
+    │ LIVROS      │    │ USUÁRIOS │ │EMPREST │ │CONSULTA│      │ SAIR    │
+    └─────────────┘    └──────────┘ │DEVOLVER│ └────────┘      └─────────┘
+         │                  │        └────────┘        │
+         ▼                  ▼             ▼             ▼
+    ┌──────────┐       ┌──────────┐  ┌─────────┐  ┌────────┐
+    │1. Webcam │       │1.Registar│  │1.Empresa│  │1.Título│
+    │2. ISBN   │       │2. Listar │  │2. Devol │  │2. ISBN │
+    │3.Manual  │       │3. Buscar │  │3. Ver   │  │3.Disp. │
+    │4. Listar │       └──────────┘  │Emprés.  │  │4.Emprés│
+    │5. Ver    │                     └─────────┘  └────────┘
+    │   ISBNs  │
+    └──────────┘
+
+
+═════════════════════════════════════════════════════════════════════════════════
+
+                 FLUXO DETALHADO: EMPRESTAR LIVRO
+                 ═════════════════════════════════
+
+                            START
+                              │
+                              ▼
+                    ┌──────────────────────┐
+                    │ Menu Emprestar/      │
+                    │ Devolver → Op. 1     │
+                    └──────────────────────┘
+                              │
+                              ▼
+                    ┌──────────────────────┐
+                    │ Input: Email Usuário │
+                    └──────────────────────┘
+                              │
+                              ▼
+                    ┌──────────────────────┐
+                    │ Usuário Existe?      │
+                    └──────────┬───────────┘
+                        NÃO   │   SIM
+                         ❌   │   ✅
+                              │
+            ┌─────────────────┘
+            │
+            ▼
+    ┌──────────────────┐
+    │ Mostra Erro      │
+    │ Retorna ao Menu  │
+    └──────────────────┘
+                              ▲
+                              │ (SIM - Existe)
+                    ┌─────────────────────┐
+                    │ Input: ISBN Livro   │
+                    └─────────────────────┘
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │ Livro Existe?       │
+                    └─────────┬───────────┘
+                        NÃO   │   SIM
+                         ❌   │   ✅
+                              │
+            ┌─────────────────┘
+            │
+            ▼
+    ┌──────────────────┐
+    │ Mostra Erro      │
+    │ Retorna ao Menu  │
+    └──────────────────┘
+                              ▲
+                              │ (SIM - Existe)
+                    ┌─────────────────────┐
+                    │ Livro Disponível?   │
+                    └─────────┬───────────┘
+                        NÃO   │   SIM
+                         ❌   │   ✅
+                              │
+            ┌─────────────────┘
+            │
+            ▼
+    ┌──────────────────────┐
+    │ Mostra "Emprestado"  │
+    │ Retorna ao Menu      │
+    └──────────────────────┘
+                              ▲
+                              │ (SIM - Disponível)
+                    ┌──────────────────────┐
+                    │ usuario.emprestar    │
+                    │ Livro(livro)         │
+                    └──────────────────────┘
+                              │
+                              ▼
+                    ┌──────────────────────┐
+                    │ ✓ Empréstimo        │
+                    │ Registrado!         │
+                    │ • Livro marcado     │
+                    │   como emprestado   │
+                    │ • Adicionado à      │
+                    │   lista do usuário  │
+                    └──────────────────────┘
+                              │
+                              ▼
+                        Volta ao Menu
+
+
+═════════════════════════════════════════════════════════════════════════════════
+
+                    FLUXO DE REGISTRAR LIVRO
+                    ════════════════════════
+
+                          START
+                            │
+                            ▼
+              ┌──────────────────────────┐
+              │ Menu Livros → Opção 2    │
+              │ (Registrar por ISBN)     │
+              └──────────────────────────┘
+                            │
+                            ▼
+              ┌──────────────────────────┐
+              │ Input: ISBN              │
+              └──────────────────────────┘
+                            │
+              ┌─────────────┴─────────────┐
+              ▼                           ▼
+        ┌──────────┐            ┌──────────────┐
+        │ISBN Vazio│            │ISBN Válido   │
+        │   ❌     │            │    ✅        │
+        └──────────┘            └──────────────┘
+              │                        │
+              ▼                        ▼
+        ┌──────────┐         ┌──────────────────┐
+        │Mostra    │         │Já Cadastrado?    │
+        │Erro      │         └────┬──────┬──────┘
+        └──────────┘         NÃO  │      │ SIM
+              │                   ▼      ▼
+              │            ┌──────┐  ┌─────────┐
+              │            │✅    │  │❌Erro   │
+              │            └──────┘  └─────────┘
+              │              │            │
+              │              ▼            ▼
+              │         ┌───────────┐  Mostra
+              │         │BuscaAPI   │  "Duplic"
+              │         │BrasilAPI  │
+              │         └──────┬────┘
+              │                ▼
+              │         ┌────────────┐
+              │         │Livro       │
+              │         │Encontrado? │
+              │         └────┬───┬───┘
+              │          NÃO │   │ SIM
+              │              ▼   ▼
+              │         ┌──┐ ┌────────┐
+              │         │❌│ │Mostra  │
+              │         └──┘ │Janela  │
+              │                │de Conf│
+              │                └───┬───┘
+              │                    ▼
+              │              User Confirma?
+              │                ┌──────────┐
+              │            NÃO │          │ SIM
+              │               ▼           ▼
+              │            Cancela   ┌────────┐
+              │                     │Adiciona│
+              │                     │à Lib.  │
+              │                     └────┬───┘
+              │                          ▼
+              └──────────────────────────┘
+                            │
+                            ▼
+                  Volta ao Menu de Livros
+
+
+═════════════════════════════════════════════════════════════════════════════════
+
+                    ESTRUTURA DE DADOS DO SISTEMA
+                    ═════════════════════════════
+
+Biblioteca
+├── usuarios: ArrayList<Usuario>
+└── livros: ArrayList<Livro>
+
+Usuario
+├── nome: String
+├── email: String
+├── telefone: String
+└── livrosEmprestados: ArrayList<Livro>
+
+Livro
+├── titulo: String
+├── autor: String
+├── isbn: String
+├── dataPublicacao: String
+├── editora: String
+└── disponibilidade: boolean
+
+APIBuscadorDelivro
+└── LivroTemp
+    ├── isbn: String
+    ├── titulo: String
+    ├── autor: String
+    ├── editora: String
+    ├── ano: String
+    ├── descricao: String
+    └── capa: Image
+
+
+═════════════════════════════════════════════════════════════════════════════════
+
+                    VALIDAÇÕES IMPLEMENTADAS
+                    ═════════════════════════
+
+1. REGISTRAR LIVRO POR ISBN
+   • ISBN não vazio ✅
+   • ISBN não duplicado ✅
+   • Conexão com API com timeout ✅
+   • Confirmação de dados ✅
+
+2. REGISTRAR LIVRO MANUALMENTE
+   • Título não vazio ✅
+   • Autor não vazio ✅
+   • ISBN não vazio ✅
+   • ISBN não duplicado ✅
+
+3. REGISTRAR USUÁRIO
+   • Nome não vazio ✅
+   • Email não vazio ✅
+   • Email não duplicado ✅
+
+4. EMPRESTAR LIVRO
+   • Usuário existe ✅
+   • Livro existe ✅
+   • Livro está disponível ✅
+
+5. DEVOLVER LIVRO
+   • Usuário existe ✅
+   • Usuário tem empréstimos ✅
+   • Livro está emprestado a este usuário ✅
+
+═════════════════════════════════════════════════════════════════════════════════
