@@ -1,0 +1,285 @@
+═══════════════════════════════════════════════════════════════════════════════
+                        GUIA DE USO RÁPIDO V2.0
+                    Sistema de Biblioteca Refatorado
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 INÍCIO RÁPIDO:
+═════════════════
+
+1. Execute o programa → Será mostrado o menu principal
+2. Digite a opção desejada (1, 2, 3, 4 ou 0)
+3. Siga as instruções na tela
+4. Para voltar ao menu anterior, escolha a opção 0
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 OPÇÃO 1: REGISTRAR LIVROS
+═════════════════════════════
+
+SUBMENU:
+  1. 📸 Registrar por WEBCAM (QR Code/Código de Barras)
+  2. 🔍 Registrar por ISBN (Buscar na Base)
+  3. ✏️  Registrar Manualmente
+  4. 📋 Listar Todos os Livros Cadastrados
+  5. 📂 Ver ISBNs Disponíveis para Registro
+
+┌─ OPÇÃO 1.1: WEBCAM ─────────────────────────┐
+│ • Aponte a câmera para código de barras      │
+│ • Sistema detecta automaticamente            │
+│ • Se falhar, oferece alternativa manual      │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 1.2: ISBN (RECOMENDADO) ─────────────┐
+│ • Digite o ISBN do livro                    │
+│ • Exemplo: 978-8535929935                   │
+│ • Sistema busca na BrasilAPI                 │
+│ • Mostra capa, descrição e detalhes         │
+│ • Você confirma os dados antes de salvar    │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 1.3: MANUAL ─────────────────────────┐
+│ • Título do livro                           │
+│ • Autor                                      │
+│ • ISBN                                       │
+│ • Data de publicação (YYYY-MM-DD)          │
+│ • Editora                                    │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 1.4: LISTAR ─────────────────────────┐
+│ • Mostra todos os livros cadastrados       │
+│ • Exibe: Título, Autor, ISBN, Disponib.   │
+└─────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+👥 OPÇÃO 2: GERENCIAR USUÁRIOS
+══════════════════════════════
+
+SUBMENU:
+  1. ➕ Registrar Novo Usuário
+  2. 📋 Listar Todos os Usuários
+  3. 🔍 Buscar Usuário por Email
+
+┌─ OPÇÃO 2.1: REGISTRAR ──────────────────────┐
+│ • Nome do usuário (obrigatório)            │
+│ • Email (obrigatório, não pode duplicar)   │
+│ • Telefone (opcional)                       │
+│                                             │
+│ Exemplo:                                    │
+│   Nome: João Silva                          │
+│   Email: joao@email.com                    │
+│   Telefone: (11) 98765-4321                │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 2.2: LISTAR ─────────────────────────┐
+│ • Mostra: Nome, Email, Telefone            │
+│ • Numeração para fácil identificação       │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 2.3: BUSCAR ─────────────────────────┐
+│ • Digite o email do usuário                │
+│ • Mostra dados completos se encontrado     │
+└─────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔄 OPÇÃO 3: EMPRESTAR/DEVOLVER LIVROS
+══════════════════════════════════════
+
+SUBMENU:
+  1. 📤 Emprestar Livro
+  2. 📥 Devolver Livro
+  3. 📊 Ver Empréstimos de um Usuário
+
+┌─ OPÇÃO 3.1: EMPRESTAR ──────────────────────┐
+│ 1. Digite o email do usuário               │
+│ 2. Digite o ISBN do livro                  │
+│ 3. Sistema valida:                          │
+│    • Usuário existe?                        │
+│    • Livro existe?                          │
+│    • Livro está disponível?                 │
+│ 4. Se tudo OK → Livro emprestado!          │
+│                                             │
+│ ✨ O livro é marcado como "Emprestado"     │
+│ ✨ Adicionado à lista do usuário           │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 3.2: DEVOLVER ───────────────────────┐
+│ 1. Digite o email do usuário               │
+│ 2. Sistema mostra livros que ele tem       │
+│ 3. Digite o ISBN do livro a devolver       │
+│ 4. Se tudo OK → Livro devolvido!           │
+│                                             │
+│ ✨ Livro volta a ficar disponível          │
+│ ✨ Removido da lista de empréstimos        │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 3.3: VER EMPRÉSTIMOS ───────────────┐
+│ • Digite o email do usuário                │
+│ • Mostra todos os livros que ele pegou    │
+│ • Lista com ISBN e título                  │
+└─────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔍 OPÇÃO 4: CONSULTAS
+═════════════════════
+
+SUBMENU:
+  1. 🔍 Buscar Livro por Título
+  2. 🔍 Buscar Livro por ISBN
+  3. 📚 Listar Livros Disponíveis
+  4. 📚 Listar Livros Emprestados
+
+┌─ OPÇÃO 4.1: BUSCAR POR TÍTULO ──────────────┐
+│ • Digite parte do título (não precisa tudo)│
+│ • Exemplo: "Harry Potter"                  │
+│ • Sistema faz busca parcial case-insensitive
+│ • Mostra título, autor, ISBN, disponib.   │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 4.2: BUSCAR POR ISBN ────────────────┐
+│ • Digite o ISBN exato                      │
+│ • Mostra detalhes completos do livro       │
+│ • Pode estar com ou sem hífen              │
+│ • Indicador se está disponível ou emprés. │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 4.3: LIVROS DISPONÍVEIS ─────────────┐
+│ • Mostra todos os livros NÃO emprestados  │
+│ • Formatado com título, autor, ISBN       │
+│ • Prontos para empréstimo                  │
+└─────────────────────────────────────────────┘
+
+┌─ OPÇÃO 4.4: LIVROS EMPRESTADOS ─────────────┐
+│ • Mostra todos os livros já emprestados   │
+│ • Formatado com título, autor, ISBN       │
+│ • Não disponíveis para novo empréstimo    │
+└─────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ SAIR (OPÇÃO 0):
+════════════════
+
+• Digitar 0 em qualquer menu retorna ao menu anterior
+• No menu principal, digitar 0 encerra o programa
+• Scanner é fechado automaticamente
+• Mensagem de despedida é exibida
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ VALIDAÇÕES E ALERTAS:
+═════════════════════════
+
+Você verá mensagens de erro se:
+  ❌ Tentar registrar com campos vazios
+  ❌ Tentar registrar livro com ISBN duplicado
+  ❌ Tentar registrar usuário com email duplicado
+  ❌ Tentar emprestar livro que já está emprestado
+  ❌ Tentar devolver livro que usuário não tem
+  ❌ Digitar email de usuário inexistente
+  ❌ Digitar ISBN de livro inexistente
+  ❌ Digite opção de menu inválida
+
+Mensagens de sucesso se:
+  ✅ Livro registrado com sucesso
+  ✅ Usuário adicionado com sucesso
+  ✅ Empréstimo registrado com sucesso
+  ✅ Livro devolvido com sucesso
+  ✅ Dados encontrados (buscas)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 DICAS ÚTEIS:
+═══════════════
+
+1. Use a opção WEBCAM ou ISBN para registrar livros automaticamente
+   → É mais rápido e preciso que o manual
+
+2. Para buscar livro por título, não precisa ser exato
+   → Procura por qualquer parte do texto
+
+3. Sempre confirme os dados na janela de confirmação
+   → Verifique capa, título, autor, editora
+
+4. Para emprestar, tenha o email do usuário à mão
+   → Evita erros de digitação
+
+5. Quando devolver livro, o sistema mostra a lista
+   → Facilita escolher o livro correto
+
+6. Use Listar para ter visão geral antes de operar
+   → Consulte disponibilidade de livros
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 FLUXO COMUM DE USO:
+══════════════════════
+
+Cenário 1: Adicionar 3 livros
+───────────────────────────────
+1. Menu Principal → 1 (Registrar Livros)
+2. Opção 2 (Por ISBN)
+3. Digite ISBN → Confirma dados
+4. Repita 2-3 mais 2 vezes
+5. Opção 4 para listar e verificar
+6. Opção 0 para voltar
+
+Cenário 2: Emprestar livro
+──────────────────────────
+1. Menu Principal → 2 (Gerenciar Usuários)
+2. Opção 1 (Registrar Novo) → Adiciona João
+3. Menu Principal → 3 (Emprestar/Devolver)
+4. Opção 1 (Emprestar)
+5. Email: joao@email.com, ISBN do livro
+6. Pronto! Livro emprestado
+
+Cenário 3: Consultar tudo
+─────────────────────────
+1. Menu Principal → 4 (Consultas)
+2. Opção 3 → Vê livros disponíveis
+3. Opção 4 → Vê livros emprestados
+4. Opção 1 ou 2 → Busca específica
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 PRIMEIRO USO RECOMENDADO:
+═══════════════════════════
+
+1. Comece adicionando alguns livros (Opção 1)
+2. Depois registre alguns usuários (Opção 2)
+3. Teste emprestar um livro (Opção 3)
+4. Veja consultas para verificar tudo (Opção 4)
+5. Faça uma devolução para testar
+6. Pronto! Sistema totalmente testado
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❓ DÚVIDAS FREQUENTES:
+══════════════════════
+
+P: O livro somiu depois que emprestei?
+R: Não! Está marcado como "Emprestado". Use Consultas para ver.
+
+P: Posso registrar o mesmo livro 2 vezes?
+R: Não! O sistema valida ISBN duplicado automaticamente.
+
+P: E se eu apertar 0 no meio da operação?
+R: Volta ao menu anterior. Nada é salvo se estava em progresso.
+
+P: Preciso de senha para usar?
+R: Não, qualquer um pode usar. Dados não são persistidos entre sessões.
+
+P: Onde os dados são salvos?
+R: Na memória apenas. Ao desligar o programa, tudo se perde.
+   (Para persistência, seria necessária implementação de BD)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Versão: 2.0
+Data: Abril de 2026
+Status: ✅ PRONTO PARA USO
+Suporte: Consulte RESUMO_PROBLEMAS_E_CORRECOES.txt para mais detalhes técnicos
+
+═══════════════════════════════════════════════════════════════════════════════
